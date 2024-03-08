@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style3.css">
+<title>Job Application Form</title>
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+    <h1>JOB APPLICATION</h1>
+    <img src="icon.PNG" alt="Profile Picture" class="profile-picture"></div>
+    <div class="info">
+        <p class="for-p">&#9993;&nbsp;
+            l215317@lhr.nu.edu.pk&nbsp;&nbsp;&nbsp;
+            &#9742;&nbsp; 03224116380&nbsp;&nbsp;&nbsp;</p></div>
+    <form id="jobApplicationForm">
+    
+        <h3>Personal Information</h3>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in the format xxx-xxx-xxxx">
+        <input type="email" id="email" name="email" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address">
+        <input type="text" id="streetAddress" name="streetAddress" placeholder="Street Address" required>
+        <input type="text" id="city" name="city" placeholder="City" required>
+        <input type="text" id="state" name="state" placeholder="State" required>
+        <input type="text" id="zipCode" name="zipCode" placeholder="ZIP Code" required>
+       
+        <h3>Resume and Cover Letter</h3>
+        <input type="file" id="resume" name="resume" required>
+        <textarea id="coverLetter" name="coverLetter" placeholder="Cover Letter"></textarea>
+       
+        <h3>Education</h3>
+        <select id="educationLevel" name="educationLevel" required>
+            <option value="">Select Education Level</option>
+            <option value="High School">High School</option>
+            <option value="Associate's Degree">Associate's Degree</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="Doctorate">Doctorate</option>
+        </select>
+        <input type="text" id="schoolName" name="schoolName" placeholder="Name of School/University" required>
+        <input type="text" id="major" name="major" placeholder="Major/Area of Study" required>
+        <input type="text" id="graduationYear" name="graduationYear" placeholder="Graduation Year" required>
+        <!-- Employment History -->
+        <div id="jobEntries">
+            <h3>Employment History</h3>
+            <input type="text" class="jobTitle" name="jobTitle[]" placeholder="Previous Job Title" required>
+            <input type="text" class="companyName" name="companyName[]" placeholder="Company Name" required>
+            <input type="text" class="employmentDates" name="employmentDates[]" placeholder="Employment Dates" required>
+            <textarea class="jobResponsibilities" name="jobResponsibilities[]" placeholder="Job Responsibilities"></textarea>
+        </div>
+        <button type="button" id="addJobEntryBtn" class="btn">Add Another Job Entry</button>
+        <!-- Skills -->
+        <div id="skills">
+            <h3>Skills</h3>
+            <input type="text" class="relevantSkills" name="relevantSkills[]" placeholder="Relevant Skill" required>
+        </div>
+        <button type="button" id="addSkillBtn" class="btn">Add Another Skill</button>
+        <!-- Availability -->
+        <h3>Availability</h3>
+        <input type="date" id="startDate" name="startDate" placeholder="Start Date" required>
+        <input type="text" id="workSchedule" name="workSchedule" placeholder="Preferred Work Schedule" required>
+        <label for="relocate">Willingness to Relocate:</label>
+        <input type="checkbox" id="relocate" name="relocate">
+        <!-- References -->
+        <div id="referenceEntries">
+            <h3>References</h3>
+            <input type="text" class="referenceName" name="referenceName[]" placeholder="Reference Name" required>
+            <input type="tel" class="referenceContact" name="referenceContact[]" placeholder="Reference Contact Information" required>
+            <input type="text" class="relationship" name="relationship[]" placeholder="Relationship to Applicant" required>
+        </div>
+        <button type="button" id="addReferenceEntryBtn" class="btn">Add Another Reference</button>
+        <!-- Additional Questions -->
+        <h3>Additional Questions</h3>
+        <textarea id="whyWorkHere" name="whyWorkHere" placeholder="Why do you want to work for this company?" required></textarea>
+        <!-- Consent and Agreement -->
+        <h3>Consent and Agreement</h3>
+        <label><input type="checkbox" id="agreeTerms" name="agreeTerms" required> I agree to the terms and conditions</label><br>
+        <label><input type="checkbox" id="acknowledgePrivacy" name="acknowledgePrivacy" required> I acknowledge the privacy policy</label>
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Submit Application</button>
+    </form>
+</div>
+
+<div class="container">
+    <button id="viewAsTableBtn" class="btn">View Applications as Table</button>
+    <table id="applicationTable" style="display:none;">
+        <tbody id="applicationTableBody">
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+    </table>
+</div>
+<script src="q3.js"></script>
+</body>
+</html>
